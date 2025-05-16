@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from Materiels.models import Materiel
-from .utils import predire_panne
+from .utils import predire_type_panne
 from rest_framework.generics import ListAPIView
 from .models import MaintenancePrediction
 from .serializers import MaintenancePredictionSerializer
@@ -12,7 +12,7 @@ class PredictPanneAPIView(APIView):
         try:
             materiel = Materiel.objects.get(id=asset_id)
             print(f"Début prédiction pour materiel {materiel.id}")
-            predire_panne(materiel)
+            predire_type_panne(materiel)
             print("Prédiction effectuée")
             return Response({"message": "Prédiction effectuée avec succès."})
         except Materiel.DoesNotExist:

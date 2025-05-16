@@ -1,0 +1,11 @@
+materiel_id,nombre_tickets,jours_depuis_dernier_ticket,categorie_codee,type_panne
+1,5,2,0,materiel
+2,3,10,1,reseau
+3,1,100,0,logiciel
+4,7,1,2,materiel
+5,2,30,3,reseau
+6,0,999,1,aucune
+7,4,3,0,logiciel
+8,6,0,0,materiel
+9,3,25,2,reseau
+10,1,200,3,compte

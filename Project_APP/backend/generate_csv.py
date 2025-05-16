@@ -4,12 +4,13 @@ import django
 from django.utils.timezone import now
 
 # Configuration Django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")  # adapte le nom si nécessaire
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
 django.setup()
 
-from Tickets.models import Ticket  # adapte "app" selon le nom réel de ton app
+from Tickets.models import Ticket
 from Materiels.models import Materiel
-# Dictionnaire pour encoder la catégorie
+
+# Map pour encoder les catégories matérielles
 categorie_map = {
     "Ordinateur": 0,
     "Imprimante": 1,
@@ -17,39 +18,35 @@ categorie_map = {
     "Telephone": 3,
 }
 
-# Chemin du fichier CSV à générer
-csv_file_path = "data_historique.csv"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_file_path = os.path.join(script_dir,'Analytics', 'ml', 'data_historique.csv')
 
-# Ouverture du fichier CSV en écriture
 with open(csv_file_path, mode='w', newline='', encoding='utf-8') as file:
-    fieldnames = ['materiel_id', 'nombre_tickets', 'jours_depuis_dernier_ticket', 'categorie_codee', 'panne_probable']
+    fieldnames = ['materiel_id', 'nombre_tickets', 'jours_depuis_dernier_ticket', 'categorie_codee', 'type_panne']
     writer = csv.DictWriter(file, fieldnames=fieldnames)
     writer.writeheader()
 
     for materiel in Materiel.objects.all():
-        # Récupérer les tickets liés à ce matériel
-        tickets = Ticket.objects.filter(asset=materiel)
+        tickets = Ticket.objects.filter(asset=materiel).order_by('-opening_date')
         nb_tickets = tickets.count()
 
         if tickets.exists():
-            dernier_ticket = tickets.latest('opening_date')
+            dernier_ticket = tickets.first()  # le plus récent
             jours_depuis_dernier = (now() - dernier_ticket.opening_date).days
+            type_panne = dernier_ticket.category  # champ direct (ex: 'reseau', 'materiel', etc.)
         else:
-            jours_depuis_dernier = 999  # ou une grande valeur par défaut
+            jours_depuis_dernier = 999
+            type_panne = "aucune"
 
-        # Déduire la catégorie à partir du nom de la classe
         categorie_nom = materiel.__class__.__name__
-        categorie = categorie_map.get(categorie_nom, -1)  # -1 si non trouvée
-
-        # Exemple simple de logique de panne
-        panne_probable = 1 if nb_tickets >= 3 else 0
+        categorie_codee = categorie_map.get(categorie_nom, -1)
 
         writer.writerow({
             'materiel_id': materiel.id,
             'nombre_tickets': nb_tickets,
             'jours_depuis_dernier_ticket': jours_depuis_dernier,
-            'categorie_codee': categorie,
-            'panne_probable': panne_probable,
+            'categorie_codee': categorie_codee,
+            'type_panne': type_panne,
         })
 
 print("✅ Fichier CSV généré avec succès :", csv_file_path)
