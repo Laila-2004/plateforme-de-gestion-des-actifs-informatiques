@@ -46,6 +46,11 @@ const AdminLayout = () => {
           }>
             Gestion de Profile
           </NavLink>
+          <NavLink to="/admin/PannaDashboard" className={({ isActive }) => 
+            `block py-2 px-4 ${isActive ? 'bg-green-900' : 'hover:bg-green-700'}`
+          }>
+            Gestion de Profile
+          </NavLink>
         </nav>
       </div>
       

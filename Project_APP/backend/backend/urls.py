@@ -23,6 +23,6 @@ urlpatterns = [
     path('api/',include('Tickets.urls')),
     path('api/',include('Materiels.urls')),
     path('api/',include('App_Users.urls')),
-    #path('api/',include('Analytics.urls')),
+    path('api/',include('Analytics.urls')),
     path('api/auth/', include('authentication.urls')),
 ]

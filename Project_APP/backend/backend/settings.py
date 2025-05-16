@@ -137,10 +137,15 @@ CHANNEL_LAYERS = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'parc_informatique',        # nom de la base
+        'USER': 'root',             # ton utilisateur MySQL
+        'PASSWORD': '',   # mot de passe
+        'HOST': 'localhost',        # ou une adresse IP si c'est à distance
+        'PORT': '3306',             # port MySQL par défaut
     }
 }
+
 
 
 # Password validation

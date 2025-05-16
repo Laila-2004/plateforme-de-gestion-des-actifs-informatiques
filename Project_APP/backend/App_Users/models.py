@@ -26,6 +26,5 @@ class App_User(AbstractUser):
         ('technicien', 'Technicien'),
         ('utilisateurNormal', 'UtilisateurNormal')
     ])
-    avatar = models.ImageField(upload_to='avatars/', default='default_avatar.png')
     def __str__(self):
         return self.username
