@@ -21,21 +21,21 @@ function ServiceDetailModal({ service, users, onClose, onEdit, onDelete }) {
             <div className="flex items-center space-x-2">
               <button 
                 onClick={onEdit}
-                className="p-1 hover:bg-gray-100 rounded text-blue-600"
+                className="p-1 hover:bg-gray-100 rounded text-blue-600 bg-white "
                 title="Modifier"
               >
                 <Edit2 size={18} />
               </button>
               <button 
                 onClick={onDelete}
-                className="p-1 hover:bg-gray-100 rounded text-red-600"
+                className="p-1 hover:bg-red-100 rounded text-red-600 bg-white "
                 title="Supprimer"
               >
                 <Trash2 size={18} />
               </button>
               <button 
                 onClick={onClose}
-                className="rounded-full p-1 hover:bg-gray-100 focus:outline-none"
+                className="rounded-full p-1 hover:bg-gray-100 focus:outline-none bg-white hover:grey-200"
               >
                 <X size={20} className="text-gray-500" />
               </button>

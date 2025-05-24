@@ -34,7 +34,7 @@ export const createService = async (departementData)=>{
 
 export const updateService = async (id,updatedData)=>{
     try{
-        const response = await instance.put(`${API_URL}${id}`,updatedData);
+        const response = await instance.patch(`${API_URL}${id}/`,updatedData);
         return response.data;
     }catch(error){
         console.error(`Erreur lors de la mise à jour de  le service ${id}`,error );

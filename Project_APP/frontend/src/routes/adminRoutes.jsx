@@ -10,6 +10,7 @@ import MaterialManagement from '../pages/admin/materielManagement';
 import { UserPlusIcon } from 'lucide-react';
 import UserProfilePage from '../pages/common/userProfilePage';
 import PanneDashboard from '../pages/admin/PanneDashboard';
+import Myassets from '../pages/common/myassets';
 // Importez d'autres pages admin ici
 
 const AdminRoutes = (
@@ -29,6 +30,7 @@ const AdminRoutes = (
     <Route path="materielManagement" element={<MaterialManagement/>}/>
     <Route path='userProfilePage' element={<UserProfilePage/>}/>
     <Route path='PannaDashboard' element={<PanneDashboard/>}/>
+    <Route path='myassets' element={<Myassets/>}/>
   </Route>
 );
 

@@ -145,10 +145,10 @@ export default function TicketForm({
                   <option value="">-- Sélectionner un équipement --</option>
                   {assets.map(asset => (
                     <option key={asset.id} value={asset.id}>
-                      {assetType === 'ordinateur' && `${asset.marque} ${asset.modele} (${asset.numero_serie})`}
-                      {assetType === 'imprimante' && `${asset.marque} ${asset.modele} (${asset.numero_serie})`}
-                      {assetType === 'telephone' && `${asset.marque} ${asset.modele} (${asset.numero_serie})`}
-                      {assetType === 'ecran' && `${asset.marque} ${asset.modele} (${asset.numero_serie})`}
+                      {assetType === 'ordinateur' && `${asset.marque} (${asset.name})`}
+                      {assetType === 'imprimante' && `${asset.marque} (${asset.name}) (${asset.id})`}
+                      {assetType === 'telephone' && `${asset.marque} (${asset.name}) (${asset.id})`}
+                      {assetType === 'ecran' && `${asset.marque} (${asset.name}) (${asset.id})`}
                     </option>
                   ))}
                 </select>

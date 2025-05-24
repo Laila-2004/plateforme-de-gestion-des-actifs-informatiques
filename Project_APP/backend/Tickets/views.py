@@ -36,13 +36,14 @@ class TicketViewSet(viewsets.ModelViewSet):
 
         # Sauvegarde de l'ancien technicien avant la mise à jour
         old_assigned_to = instance.assigned_to
+        old_status = instance.status
 
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         ticket = serializer.save()
 
         # ✅ Si le ticket est maintenant fermé → notifier l'admin + l'utilisateur qui a créé le ticket
-        if ticket.status == 'fermé' and instance.status != 'fermé':
+        if ticket.status == 'fermé' and old_status != 'fermé':
             admin_users = User.objects.filter(role='admin')
             for admin in admin_users:
                 Notification.objects.create(

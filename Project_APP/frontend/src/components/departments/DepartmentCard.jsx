@@ -154,7 +154,7 @@ function DepartmentCard({
           {!isExpanded && services.length > 3 && (
             <button 
               onClick={() => setIsExpanded(true)}
-              className="w-full mt-2 text-center text-sm text-blue-600 hover:text-blue-800 py-1"
+              className="w-full mt-2 text-center text-sm text-blue-600 hover:text-blue-800 py-1 bg-gray-100 hover:bg-gray-200"
             >
               Afficher {services.length - 3} services supplémentaires
             </button>

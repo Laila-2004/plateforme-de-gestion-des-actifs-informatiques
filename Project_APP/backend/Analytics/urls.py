@@ -1,8 +1,10 @@
-from django.urls import path
-from .views import PredictPanneAPIView,MaintenancePredictionListAPIView
+from rest_framework.routers import DefaultRouter
+from django.urls import path, include
+from .views import MaintenancePredictionViewSet
+
+router = DefaultRouter()
+router.register(r'predictions', MaintenancePredictionViewSet)
 
 urlpatterns = [
-    path('predict_panne/<int:asset_id>/', PredictPanneAPIView.as_view()),
-    path('predictions/', MaintenancePredictionListAPIView.as_view()),
-
+    path('', include(router.urls)),
 ]

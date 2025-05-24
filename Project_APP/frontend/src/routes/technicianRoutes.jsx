@@ -6,6 +6,7 @@ import TechDashboard from '../pages/technician/Dashboard';
 import UserProfile from '../pages/common/userProfilePage';
 import TicketManagement from '../pages/technician/ticketManagement';
 import MaterielPage from '../pages/admin/materielManagement';
+import Myassets from '../pages/common/myassets';
 // Importez d'autres pages technicien ici
 
 const TechnicianRoutes = (
@@ -22,7 +23,7 @@ const TechnicianRoutes = (
     <Route path="userProfilePage" element={<UserProfile />} />
     <Route path='ticketManagement' element={< TicketManagement/>}/>
     <Route path='materielManagement' element={< MaterielPage/>}/>
-    <Route path="" element={<Navigate to="/tech/dashboard" replace />} />
+    <Route path='myassets' element={< Myassets/>}/>
   </Route>
 );
 

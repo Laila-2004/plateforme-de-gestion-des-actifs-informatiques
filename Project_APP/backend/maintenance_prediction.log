@@ -1,0 +1,240 @@
+2025-05-16 10:40:28,718 - django.request - WARNING - Not Found: /api/predict_panne/1/
+2025-05-16 10:40:32,681 - django.request - WARNING - Not Found: /api/predict_panne/1/
+2025-05-16 10:40:33,678 - django.request - WARNING - Not Found: /api/predict_panne/1/
+2025-05-16 10:40:35,285 - django.request - WARNING - Not Found: /api/predict_panne/1/
+2025-05-16 10:42:50,711 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\serializers.py changed, reloading.
+2025-05-16 10:51:19,932 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-16 11:09:20,530 - django.request - WARNING - Not Found: /api/analytics/
+2025-05-16 11:09:34,605 - django.request - WARNING - Not Found: /api/analytics/predictions/high_risk_assets/
+2025-05-16 11:10:04,488 - django.request - WARNING - Unauthorized: /api/predictions/high_risk_assets/
+2025-05-16 11:10:09,517 - django.request - WARNING - Unauthorized: /api/predictions/high_risk_assets/
+2025-05-16 11:11:36,611 - django.request - WARNING - Unauthorized: /api/predictions/
+2025-05-16 11:52:17,380 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-16 12:09:25,684 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-05-16 12:09:25,767 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-05-16 12:09:38,629 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-05-16 12:09:38,657 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-05-16 12:09:48,262 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-05-16 12:09:50,339 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-05-16 13:07:46,384 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-16 13:09:50,847 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-05-16 13:09:52,473 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-05-16 14:55:07,261 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 14:55:10,226 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 14:55:10,875 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 14:55:11,068 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 14:55:13,900 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 14:55:16,525 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 14:55:17,046 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 14:56:01,473 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PATCH, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PATCH data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 14:56:03,861 - django.request - ERROR - Internal Server Error: /api/services/1
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via PATCH, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PATCH data. Change your form to point to 127.0.0.1:8000/api/services/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-05-16 15:19:02,228 - analytics_models - INFO - Ticket créé pour le matériel Ecrant1 - Mise à jour de la prédiction
+2025-05-16 15:19:02,354 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.55)
+2025-05-16 15:20:37,597 - analytics_models - INFO - Ticket créé pour le matériel DESK1 - Mise à jour de la prédiction
+2025-05-16 15:20:37,680 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.55)
+2025-05-16 15:21:17,946 - analytics_models - INFO - Ticket modifié pour le matériel Ecrant1 - Mise à jour de la prédiction
+2025-05-16 15:21:18,061 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.55)
+2025-05-16 15:23:40,881 - analytics_models - INFO - Ticket modifié pour le matériel Ecrant1 - Mise à jour de la prédiction
+2025-05-16 15:23:40,960 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.55)
+2025-05-16 15:26:31,804 - analytics_models - INFO - Ticket modifié pour le matériel DESK1 - Mise à jour de la prédiction
+2025-05-16 15:26:31,873 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.55)
+2025-05-16 15:27:05,303 - analytics_models - INFO - Ticket modifié pour le matériel DESK1 - Mise à jour de la prédiction
+2025-05-16 15:27:05,365 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.55)
+2025-05-16 15:27:54,791 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\views.py changed, reloading.
+2025-05-16 15:29:59,654 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\views.py changed, reloading.
+2025-05-16 15:30:32,930 - analytics_models - INFO - Ticket modifié pour le matériel Ecrant1 - Mise à jour de la prédiction
+2025-05-16 15:30:33,004 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.55)
+2025-05-16 15:30:46,917 - analytics_models - INFO - Ticket modifié pour le matériel Ecrant1 - Mise à jour de la prédiction
+2025-05-16 15:30:46,983 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.55)
+2025-05-16 15:32:27,788 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\views.py changed, reloading.
+2025-05-16 15:32:57,933 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\views.py changed, reloading.
+2025-05-16 15:34:37,310 - analytics_models - INFO - Ticket modifié pour le matériel Ecrant1 - Mise à jour de la prédiction
+2025-05-16 15:34:37,374 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.55)
+2025-05-16 15:35:39,225 - analytics_models - INFO - Ticket modifié pour le matériel Ecrant1 - Mise à jour de la prédiction
+2025-05-16 15:35:39,310 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.55)
+2025-05-16 15:40:28,207 - analytics_models - INFO - Ticket créé pour le matériel DESK2 - Mise à jour de la prédiction
+2025-05-16 15:40:28,287 - maintenance_prediction - INFO - Prédiction créée pour DESK2: materiel (probabilité: 0.55)
+2025-05-16 15:40:50,678 - analytics_models - INFO - Ticket modifié pour le matériel DESK2 - Mise à jour de la prédiction
+2025-05-16 15:40:50,764 - maintenance_prediction - INFO - Prédiction créée pour DESK2: materiel (probabilité: 0.55)
+2025-05-16 15:46:06,165 - analytics_models - INFO - Ticket créé pour le matériel DESK1 - Mise à jour de la prédiction
+2025-05-16 15:46:06,266 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.55)
+2025-05-16 15:46:56,985 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:06,764 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:07,644 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:07,876 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:08,078 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:08,276 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:08,511 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:08,746 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:09,036 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:09,247 - django.request - WARNING - Bad Request: /api/tickets/4/
+2025-05-16 15:47:47,522 - analytics_models - INFO - Ticket modifié pour le matériel DESK1 - Mise à jour de la prédiction
+2025-05-16 15:47:47,596 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.55)
+2025-05-16 15:48:09,483 - analytics_models - INFO - Ticket modifié pour le matériel DESK1 - Mise à jour de la prédiction
+2025-05-16 15:48:09,546 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.55)
+2025-05-16 15:53:48,793 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\views.py changed, reloading.
+2025-05-16 15:54:00,634 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\views.py changed, reloading.
+2025-05-16 15:54:21,540 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\views.py changed, reloading.
+2025-05-16 15:55:57,007 - analytics_models - INFO - Ticket créé pour le matériel DESK3 - Mise à jour de la prédiction
+2025-05-16 15:55:57,092 - maintenance_prediction - INFO - Prédiction créée pour DESK3: materiel (probabilité: 0.55)
+2025-05-16 15:56:39,140 - analytics_models - INFO - Ticket modifié pour le matériel DESK3 - Mise à jour de la prédiction
+2025-05-16 15:56:39,208 - maintenance_prediction - INFO - Prédiction créée pour DESK3: materiel (probabilité: 0.55)
+2025-05-16 15:58:34,990 - analytics_models - INFO - Ticket modifié pour le matériel Ecrant1 - Mise à jour de la prédiction
+2025-05-16 15:58:35,087 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.55)
+2025-05-16 16:00:23,796 - django.request - WARNING - Bad Request: /api/ordinateurs/
+2025-05-16 16:00:28,353 - django.request - WARNING - Bad Request: /api/ordinateurs/
+2025-05-16 16:00:41,561 - django.request - WARNING - Bad Request: /api/ordinateurs/
+2025-05-16 16:01:04,133 - django.request - WARNING - Bad Request: /api/ordinateurs/
+2025-05-16 16:01:56,728 - django.request - WARNING - Bad Request: /api/ordinateurs/
+2025-05-16 16:02:16,710 - django.request - WARNING - Bad Request: /api/ordinateurs/6/
+2025-05-16 16:07:40,184 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-05-16 16:08:09,752 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-05-16 16:08:17,572 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-05-16 17:54:41,336 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-16 18:54:41,329 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-16 19:54:41,328 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-16 20:54:41,323 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-19 14:26:37,663 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-19 15:18:50,928 - maintenance_prediction - INFO - Création de prédictions pour tous les matériels...
+2025-05-19 15:18:51,019 - maintenance_prediction - INFO - Prédiction créée pour Ecrant1: materiel (probabilité: 0.51)
+2025-05-19 15:18:51,092 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.51)
+2025-05-19 15:18:51,160 - maintenance_prediction - INFO - Prédiction créée pour DESK2: logiciel (probabilité: 0.49)
+2025-05-19 15:18:51,235 - maintenance_prediction - INFO - Prédiction créée pour DESK3: materiel (probabilité: 0.51)
+2025-05-19 15:18:51,295 - maintenance_prediction - INFO - Prédiction créée pour Ecrant2: logiciel (probabilité: 0.49)
+2025-05-19 15:18:51,362 - maintenance_prediction - INFO - Prédiction créée pour DESK4: logiciel (probabilité: 0.49)
+2025-05-19 15:18:51,427 - maintenance_prediction - INFO - Prédiction créée pour DESK4: logiciel (probabilité: 0.49)
+2025-05-19 15:18:51,428 - maintenance_prediction - INFO - Prédictions créées pour 7 matériels sur 7
+2025-05-19 15:26:56,649 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-19 16:26:59,661 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-20 12:20:56,463 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-20 13:21:11,643 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-20 14:21:14,640 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-20 14:21:14,984 - django.request - WARNING - Unauthorized: /api/auth/token/refresh/
+2025-05-20 19:38:38,968 - django.request - WARNING - Unauthorized: /api/auth/login/
+2025-05-20 20:39:29,427 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-20 21:39:35,422 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-20 22:42:21,204 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-20 23:42:32,693 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-21 00:43:32,687 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-22 09:10:12,653 - django.request - WARNING - Unauthorized: /api/auth/login/
+2025-05-23 22:07:05,898 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-24 17:36:52,385 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-24 17:58:48,963 - django.request - WARNING - Unauthorized: /api/auth/login/
+2025-05-24 20:03:47,039 - django.request - WARNING - Unauthorized: /api/notifications/

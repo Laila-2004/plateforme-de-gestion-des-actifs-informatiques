@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'Materiels',
     'Analytics',
     'channels',
+    'django_apscheduler'
 ]
 
 REST_FRAMEWORK = {
