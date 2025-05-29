@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import NotificationsBell from '../components/notification/NotificationsBell';
+import ChatBot from '../components/chat/chatbot';
 
 const TechLayout = () => {
   const { currentUser, logout } = useAuth();
@@ -174,7 +175,7 @@ const TechLayout = () => {
             </div>
           </div>
         </header>
-        
+        <ChatBot />
         {/* Page Content */}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gradient-to-br from-gray-50 to-white p-6">
           <div className="max-w-7xl mx-auto">

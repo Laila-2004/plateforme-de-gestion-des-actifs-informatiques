@@ -11,6 +11,7 @@ import { getAllTickets } from '../../services/api/ticketService';
 import { getAllUsers } from '../../services/api/userService';
 import { getAllDepartments } from '../../services/api/departmentService';
 import { getAllServices } from '../../services/api/serviceService';
+import ChatBot from '../../components/chat/chatbot';
 
 const Dashboard = () => {
   // États pour stocker les données

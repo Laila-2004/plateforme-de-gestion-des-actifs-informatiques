@@ -18,6 +18,7 @@ import {
   ChevronRight,
   Shield
 } from 'lucide-react';
+import ChatBot from '../components/chat/chatbot';
 
 const AdminLayout = () => {
   const { currentUser, logout } = useAuth();
@@ -197,6 +198,7 @@ const AdminLayout = () => {
             </div>
           </div>
         </header>
+        <ChatBot />
 
         {/* Page Content */}
                 <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gradient-to-br from-gray-50 to-white p-6">

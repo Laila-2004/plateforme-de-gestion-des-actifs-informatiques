@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'chat',
     'rest_framework_simplejwt',
     'authentication',
     'App_Users',
@@ -74,6 +75,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Adresse de votre frontend React
 ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 # Configuration JWT
 SIMPLE_JWT = {

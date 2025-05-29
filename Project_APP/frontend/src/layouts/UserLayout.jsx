@@ -16,6 +16,7 @@ import {
   Settings,
   Activity
 } from 'lucide-react';
+import ChatBot from '../components/chat/chatbot';
 
 const UserLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -219,7 +220,7 @@ const UserLayout = () => {
             </div>
           </div>
         </header>
-
+          <ChatBot />
         {/* Main content with enhanced styling */}
         <main className="flex-1 overflow-auto bg-gradient-to-br from-slate-50/50 to-white">
           <div className="p-8">

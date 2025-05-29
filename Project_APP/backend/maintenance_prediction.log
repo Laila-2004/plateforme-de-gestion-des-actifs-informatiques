@@ -238,3 +238,58 @@ RuntimeError: You called this URL via PATCH, but the URL doesn't end in a slash 
 2025-05-24 17:36:52,385 - django.request - WARNING - Unauthorized: /api/notifications/
 2025-05-24 17:58:48,963 - django.request - WARNING - Unauthorized: /api/auth/login/
 2025-05-24 20:03:47,039 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-29 16:07:12,217 - django.request - ERROR - Internal Server Error: /chat/api/
+2025-05-29 16:07:37,721 - django.request - ERROR - Internal Server Error: /chat/api/
+2025-05-29 16:54:10,687 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 16:55:49,497 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 16:55:58,912 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 16:56:10,062 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 16:56:23,634 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 16:56:39,000 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 16:57:07,489 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:07:57,280 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-29 17:27:11,593 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:27:30,611 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:27:58,576 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:28:22,634 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:28:29,818 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:39:04,676 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:39:20,844 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:40:17,558 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:41:28,404 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:41:38,467 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:41:49,698 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:42:00,217 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:42:09,880 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:42:26,342 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:42:36,235 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 17:43:13,136 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 18:05:43,045 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 18:05:51,528 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 18:07:00,803 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 18:09:26,459 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 18:09:34,359 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 18:15:28,860 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 18:17:18,498 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 18:37:25,616 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-29 19:54:27,596 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:54:40,392 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:55:08,158 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:55:23,122 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:55:31,878 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:55:38,863 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:55:48,502 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:55:55,241 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:56:44,548 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:57:13,354 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:57:25,079 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 19:58:39,360 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 21:41:57,032 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-29 21:42:12,382 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 21:51:45,900 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 22:25:51,846 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-29 22:42:56,799 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-29 22:42:56,809 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-29 23:15:57,164 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\backend\urls.py changed, reloading.
+2025-05-29 23:57:53,519 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-29 23:57:54,790 - django.request - WARNING - Unauthorized: /api/notifications/
