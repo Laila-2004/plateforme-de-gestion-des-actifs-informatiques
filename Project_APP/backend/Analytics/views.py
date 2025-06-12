@@ -6,6 +6,7 @@ from .models import MaintenancePrediction
 from .serializers import MaintenancePredictionSerializer
 from Materiels.models import Materiel
 from .prediction_handler import PredictionHandler
+from django.http import Http404
 
 class MaintenancePredictionViewSet(viewsets.ModelViewSet):
     """
@@ -14,6 +15,29 @@ class MaintenancePredictionViewSet(viewsets.ModelViewSet):
     queryset = MaintenancePrediction.objects.all().order_by('-prediction_date')
     serializer_class = MaintenancePredictionSerializer
     permission_classes = [AllowAny]
+
+    def destroy(self, request, *args, **kwargs):
+        """
+        Delete a specific prediction
+        """
+        try:
+            instance = self.get_object()
+            self.perform_destroy(instance)
+            return Response(
+                {"message": "Prédiction supprimée avec succès"}, 
+                status=status.HTTP_200_OK
+            )
+        except Http404:
+            return Response(
+                {"error": "Prédiction non trouvée"}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Exception as e:
+            return Response(
+                {"error": str(e)}, 
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+    
     
     @action(detail=False, methods=['post'])
     def update_predictions(self, request):

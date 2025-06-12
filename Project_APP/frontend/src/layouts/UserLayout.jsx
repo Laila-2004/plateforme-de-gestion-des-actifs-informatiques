@@ -222,15 +222,9 @@ const UserLayout = () => {
         </header>
           <ChatBot />
         {/* Main content with enhanced styling */}
-        <main className="flex-1 overflow-auto bg-gradient-to-br from-slate-50/50 to-white">
-          <div className="p-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl shadow-slate-900/5 border border-slate-200/60 min-h-[calc(100vh-12rem)] p-1">
-                <div className="p-6">
-                  <Outlet />
-                </div>
-              </div>
-            </div>
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gradient-to-br from-gray-50 to-white p-6">
+          <div className="max-w-7xl mx-auto">
+            <Outlet />
           </div>
         </main>
 

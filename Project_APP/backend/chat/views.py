@@ -12,13 +12,13 @@ from huggingface_hub import InferenceClient
 class ChatService:
     @staticmethod
     def get_huggingface_response(message):
-        """Utilise l'API Hugging Face avec InferenceClient et le modèle DeepSeek-R1"""
+        """Utilise l'API Hugging Face avec InferenceClient et le modèle Llama-3.1-8B-Instruct"""
         try:
             
             # Initialisez le client avec votre token
             client = InferenceClient(
                 provider="nebius",
-                api_key="token",  # Remplacez par votre vrai token
+                api_key="ton token",  # Remplacez par votre vrai token
             )
             
             # Créer la completion avec le nouveau modèle

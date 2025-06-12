@@ -33,9 +33,19 @@ export default function TicketForm({
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
         <div className="bg-white rounded-lg p-6 max-w-2xl w-full max-h-screen overflow-y-auto">
-          <h2 className="text-xl font-bold mb-4">
-            {isEditing ? `Modifier le ticket #${ticketId}` : 'Ajouter un nouveau ticket'}
-          </h2>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-bold">
+              {isEditing ? `Modifier le ticket #${ticketId}` : 'Ajouter un nouveau ticket'}
+            </h2>
+            <button 
+              onClick={onClose} 
+              className="text-gray-600 hover:text-gray-900 w-10 h-10 rounded-full bg-white hover:bg-red-300 flex items-center justify-center"
+            >
+              X
+            </button>
+          </div>
+ 
+
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
@@ -49,6 +59,8 @@ export default function TicketForm({
                   required
                 />
               </div>
+              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Statut</label>
                 <select
@@ -133,6 +145,12 @@ export default function TicketForm({
                   <option value="imprimante">Imprimante</option>
                   <option value="telephone">Téléphone</option>
                   <option value="ecran">Écran</option>
+                  <option value="logiciel">Logiciel</option>
+                  <option value="peripherique">Peripherique</option>
+                  <option value="routeur">Routeur</option>
+                  <option value="serveur">Serveur</option>
+                  <option value="stockage_externe">Stockage Externe</option>
+
                 </select>
                 
                 <label className="block text-sm font-medium text-gray-700 mb-1">Équipement concerné</label>
@@ -145,10 +163,74 @@ export default function TicketForm({
                   <option value="">-- Sélectionner un équipement --</option>
                   {assets.map(asset => (
                     <option key={asset.id} value={asset.id}>
-                      {assetType === 'ordinateur' && `${asset.marque} (${asset.name})`}
-                      {assetType === 'imprimante' && `${asset.marque} (${asset.name}) (${asset.id})`}
-                      {assetType === 'telephone' && `${asset.marque} (${asset.name}) (${asset.id})`}
-                      {assetType === 'ecran' && `${asset.marque} (${asset.name}) (${asset.id})`}
+                      {assetType === 'ordinateur' && (
+                        <div>
+                          <div>Marque: {asset.marque} | </div>
+                          <div>Nom: {asset.name}</div>
+                        </div>
+                      )}
+
+                      {assetType === 'imprimante' && (
+                        <div>
+                          <div>Marque: {asset.marque} | </div>
+                          <div>Nom: {asset.name} | </div>
+                          <div>ID: {asset.id}</div>
+                        </div>
+                      )}
+
+                      {assetType === 'telephone' && (
+                        <div>
+                          <div>Marque: {asset.marque} | </div>
+                          <div>Nom: {asset.name} | </div>
+                          <div>ID: {asset.id}</div>
+                        </div>
+                      )}
+
+                      {assetType === 'ecran' && (
+                        <div>
+                          <div>Marque: {asset.marque} | </div>
+                          <div>Nom: {asset.name} | </div>
+                          <div>ID: {asset.id}</div>
+                        </div>
+                      )}
+
+                      {assetType === 'logiciel' && (
+                        <div>
+                          <div>Nom: {asset.name} | </div>
+                          <div>Version: {asset.version}</div>
+                        </div>
+                      )}
+
+                      {assetType === 'peripherique' && (
+                        <div>
+                          <div>Nom: {asset.name} | </div>
+                          <div>Type: {asset.type}</div>
+                        </div>
+                      )}
+
+                      {assetType === 'routeur' && (
+                        <div>
+                          <div>Marque: {asset.marque} | </div>
+                          <div>Nom: {asset.name} | </div>
+                          <div>ID: {asset.id}</div>
+                        </div>
+                      )}
+
+                      {assetType === 'serveur' && (
+                        <div>
+                          <div>Marque: {asset.marque} | </div>
+                          <div>Nom: {asset.name} | </div>
+                          <div>ID: {asset.id}</div>
+                        </div>
+                      )}
+
+                      {assetType === 'stockage_externe' && (
+                        <div>
+                          <div>Marque: {asset.marque} | </div>
+                          <div>Nom: {asset.name} | </div>
+                          <div>ID: {asset.id}</div>
+                        </div>
+                      )}
                     </option>
                   ))}
                 </select>

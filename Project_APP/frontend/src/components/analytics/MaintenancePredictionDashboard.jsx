@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import instance from '../../services/api/axiosConfig';
-import { AlertTriangle, Calendar, BarChart2, Settings, Info, Plus } from 'lucide-react';
+import { AlertTriangle, Calendar, BarChart2, X, Info, Plus } from 'lucide-react';
 import { createTicket } from '../../services/api/ticketService';
 import { useAuth } from '../../context/AuthContext';
 import { getAllComputers, getAllEcrants, getAllPhones, getAllPrinters } from '../../services/api/materielService';
@@ -144,6 +144,15 @@ function MaintenancePredictionDashboard() {
       asset: null
     });
   };
+  // Gérer la suppression d'une prédiction
+  const handleDeletePrediction = async (id) => {
+  try {
+    const response = await instance.delete(`predictions/${id}/`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
 
   // Nouvelle fonction pour créer un ticket à partir d'une prédiction
   const createTicketFromPrediction = async (prediction) => {
@@ -285,10 +294,18 @@ function MaintenancePredictionDashboard() {
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${colorClass}`}>
                         {probabilityPercentage}% de risque
                       </span>
+                      <button
+                          onClick={() => handleDeletePrediction(prediction.id)}
+                          className="p-1 bg-gray-50 hover:bg-red-300 text-gray-400 hover:text-red-600 transition-colors w-5"
+                          title="Supprimer la prédiction"
+                        >
+                          <X className="h-4 w-4" />
+                        </button>
                     </div>
                     <h3 className="font-bold text-xl mt-2 text-gray-800">{prediction.asset_name}</h3>
+                    
                   </div>
-                  
+                   
                   <div className="p-5">
                     <div className="flex items-start mb-4">
                       <div className="mr-3 mt-1">

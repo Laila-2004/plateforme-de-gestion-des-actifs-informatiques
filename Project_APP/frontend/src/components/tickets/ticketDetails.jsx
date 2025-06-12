@@ -252,21 +252,37 @@ console.log(currentUser);
         ) : (
           <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <h3 className="text-sm font-medium text-gray-500">Créé par</h3>
-                <p className="mt-1">
-                  {ticket.created_by
-                    ? ` ${ticket.created_by_details.first_name} ${ticket.created_by_details.last_name}`
-                    : 'Non spécifié'}
-                </p>
+              <div className="bg-gray-50 p-4 rounded-xl shadow-sm border">
+                <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-1">
+                  Créé par
+                </h3>
+
+                {ticket.created_by ? (
+                  <div className="text-sm text-gray-800 space-y-1">
+                    <p className="font-medium">
+                      {ticket.created_by_details.first_name} {ticket.created_by_details.last_name}
+                    </p>
+                    <p className="text-gray-500">
+                      <span className="font-semibold text-blue-600">Service:</span>{' '}
+                      {ticket.created_by_details.service_details.name}
+                    </p>
+                    <p className="text-gray-500">
+                      <span className="font-semibold text-green-600">Département:</span>{' '}
+                      {ticket.created_by_details.service_details.department_details.name}
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-sm italic text-gray-400">Non spécifié</p>
+                )}
               </div>
 
-              <div>
+
+              <div className="bg-gray-50 p-4 rounded-xl shadow-sm border">
                 <h3 className="text-sm font-medium text-gray-500">Date d'ouverture</h3>
                 <p className="mt-1">{formatDate(ticket.opening_date)}</p>
               </div>
 
-              <div>
+              <div className="bg-gray-50 p-4 rounded-xl shadow-sm border">
                 <h3 className="text-sm font-medium text-gray-500">Statut</h3>
                 <p className="mt-1">
                   <span
@@ -279,7 +295,7 @@ console.log(currentUser);
                 </p>
               </div>
 
-              <div>
+              <div className="bg-gray-50 p-4 rounded-xl shadow-sm border">
                 <h3 className="text-sm font-medium text-gray-500">Priorité</h3>
                 <p className="mt-1">
                   <span
@@ -292,18 +308,18 @@ console.log(currentUser);
                 </p>
               </div>
 
-              <div>
+              <div className="bg-gray-50 p-4 rounded-xl shadow-sm border">
                 <h3 className="text-sm font-medium text-gray-500">Catégorie</h3>
                 <p className="mt-1">{translateCategory(ticket.category)}</p>
               </div>
 
-              <div>
+              <div className="bg-gray-50 p-4 rounded-xl shadow-sm border">
                 <h3 className="text-sm font-medium text-gray-500">Type de ticket</h3>
                 <p className="mt-1">{translateTicketType(ticket.type_ticket)}</p>
               </div>
 
               {ticket.asset && (
-                <div>
+                <div className="bg-gray-50 p-4 rounded-xl shadow-sm border">
                   <h3 className="text-sm font-medium text-gray-500">
                     Équipement concerné
                   </h3>
@@ -317,7 +333,7 @@ console.log(currentUser);
               )}
 
               {ticket.status === 'fermé' && (
-                <div>
+                <div className="bg-gray-50 p-4 rounded-xl shadow-sm border">
                   <h3 className="text-sm font-medium text-gray-500">Date de fermeture</h3>
                   <p className="mt-1">{formatDate(ticket.close_date)}</p>
                 </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Search, Filter, Plus } from 'lucide-react';
 import { getAllTickets, createTicket, updateTicket, deleteTicket } from '../../services/api/ticketService';
 import { getAllUsers } from '../../services/api/userService';
-import { getAllComputers, getAllEcrants, getAllPhones, getAllPrinters } from '../../services/api/materielService';
+import { getAllComputers, getAllEcrants, getAllPhones, getAllPrinters,getAllLogiciels,getAllPeripheriques,getAllRouteurs,getAllServeurs,getAllStockagesExterne } from '../../services/api/materielService';
 import { useAuth } from '../../context/AuthContext';
 import TicketsTable from '../../components/tickets/ticketTable';
 import TicketForm from '../../components/tickets/ticketForm';
@@ -109,6 +109,21 @@ export default function TicketDashboard() {
           break;
         case 'ecran':
           assetsData = await getAllEcrants();
+          break;
+        case 'logiciel':
+          assetsData = await getAllLogiciels();
+          break;
+        case 'peripherique':
+          assetsData = await getAllPeripheriques();
+          break;
+        case 'routeur':
+          assetsData = await getAllRouteurs();
+          break;
+        case 'serveur':
+          assetsData = await getAllServeurs();
+          break;
+        case 'stockage_externe':
+          assetsData = await getAllStockagesExterne();
           break;
         default:
           assetsData = [];

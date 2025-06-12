@@ -94,3 +94,5 @@ class TicketComment(models.Model):
 
     class Meta:
         ordering = ['-created_at']  # Trier les commentaires du plus récent au plus ancien
+
+

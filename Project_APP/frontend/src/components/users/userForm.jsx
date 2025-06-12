@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments, services, computers, printers, ecrants, phones }) => {
+const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments, services, computers, printers, ecrants, phones,logiciels,peripheriques,routeurs,serveurs,stockagesExterne, }) => {
   const initialFormState = {
     username: '',
     password: '',
@@ -12,7 +12,8 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
     role: '',
     department: '',
     service: '',
-    assignedMaterials: [], // Array of assigned material IDs and types
+    assignedMaterials: [],
+    is_active:true
   };
 
   const [form, setForm] = useState(initialFormState);
@@ -23,6 +24,11 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
   const [availablePhones, setAvailablePhones] = useState([]);
   const [availablePrinters, setAvailablePrinters] = useState([]);
   const [availableEcrants, setAvailableEcrants] = useState([]);
+  const [availableLogiciels, setAvailableLogiciels] = useState([]);
+  const [availablePeripheriques, setAvailablePeripheriques] = useState([]);
+  const [availableRouteurs, setAvailableRouteurs] = useState([]);
+  const [availableServeurs, setAvailableServeurs] = useState([]);
+  const [availableStockagesExterne, setAvailableStockagesExterne] = useState([]);
   const [newMaterial, setNewMaterial] = useState({ type: '', id: '' }); // Pour l'ajout de matériel
 
   // Helper function pour obtenir les détails du matériel
@@ -42,6 +48,20 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
         break;
       case 'ecrant':
         material = ecrants.find(e => e.id === materialId || e.id === parseInt(materialId));
+      case 'logiciel':
+        material = logiciels.find(l => l.id === materialId || l.id === parseInt(materialId));
+        break; 
+      case 'peripherique':
+        material = peripheriques.find(p => p.id === materialId || p.id === parseInt(materialId)); 
+        break;
+      case 'routeur':
+        material = routeurs.find(r => r.id === materialId || r.id === parseInt(materialId));
+        break;
+      case 'serveur':
+        material = serveurs.find(s => s.id === materialId || s.id === parseInt(materialId));
+        break;
+      case 'stockageExterne':
+        material = stockagesExterne.find(s => s.id === materialId || s.id === parseInt(materialId));
         break;
       default:
         return null;
@@ -58,11 +78,21 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
         const allAvailablePhones = phones.filter(p => !p.assigned_to || (user && p.assigned_to === user.id));
         const allAvailablePrinters = printers.filter(pr => !pr.assigned_to || (user && pr.assigned_to === user.id));
         const allAvailableEcrants = ecrants.filter(e => !e.assigned_to || (user && e.assigned_to === user.id));
+        const allAvailableLogiciels = logiciels.filter(l => !l.assigned_to || (user && l.assigned_to === user.id));
+        const allAvailablePeripheriques = peripheriques.filter(p => !p.assigned_to || (user && p.assigned_to === user.id));
+        const allAvailableRouteurs = routeurs.filter(r => !r.assigned_to || (user && r.assigned_to === user.id));
+        const allAvailableServeurs = serveurs.filter(s => !s.assigned_to || (user && s.assigned_to === user.id));
+        const allAvailableStockagesExterne = stockagesExterne.filter(s => !s.assigned_to || (user && s.assigned_to === user.id));
 
         setAvailableComputers(allAvailableComputers);
         setAvailablePhones(allAvailablePhones);
         setAvailablePrinters(allAvailablePrinters);
         setAvailableEcrants(allAvailableEcrants);
+        setAvailableLogiciels(allAvailableLogiciels);
+        setAvailablePeripheriques(allAvailablePeripheriques);
+        setAvailableRouteurs(allAvailableRouteurs);
+        setAvailableServeurs(allAvailableServeurs);
+        setAvailableStockagesExterne(allAvailableStockagesExterne);
       } catch (error) {
         console.error("Erreur lors du chargement des matériels disponibles:", error);
       }
@@ -81,6 +111,17 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
           assignedMaterials.push({ id: pr.id.toString(), type: 'printer' }));
         ecrants.filter(e => e.assigned_to === user.id).forEach(e => 
           assignedMaterials.push({ id: e.id.toString(), type: 'ecrant' }));
+        logiciels.filter(l => l.assigned_to === user.id).forEach(l =>
+          assignedMaterials.push({ id: l.id.toString(), type: 'logiciel' }));
+        peripheriques.filter(p => p.assigned_to === user.id).forEach(p =>
+          assignedMaterials.push({ id: p.id.toString(), type: 'peripherique' }));
+        routeurs.filter(r => r.assigned_to === user.id).forEach(r =>
+          assignedMaterials.push({ id: r.id.toString(), type: 'routeur' }));
+        serveurs.filter(s => s.assigned_to === user.id).forEach(s =>
+          assignedMaterials.push({ id: s.id.toString(), type: 'serveur' }));
+        stockagesExterne.filter(s => s.assigned_to === user.id).forEach(s =>
+          assignedMaterials.push({ id: s.id.toString(), type: 'stockageExterne' }));
+
         
         setForm({
           username: user.username || '',
@@ -93,6 +134,7 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
           service: user.service_details?.id || '',
           department: user.service_details?.department_details?.id || '',
           assignedMaterials: assignedMaterials,
+          is_active: user.is_active
         });
       } else {
         setForm(initialFormState);
@@ -101,17 +143,21 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
       setErrors({});
       setFormTouched({});
     }
-  }, [user, isOpen, computers, phones, printers, ecrants]);
+  }, [user, isOpen, computers, phones, printers, ecrants, logiciels, peripheriques, routeurs, serveurs, stockagesExterne]);
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-    setFormTouched({ ...formTouched, [name]: true });
+ const handleChange = (e) => {
+  const { name, type, value, checked } = e.target;
 
-    if (errors[name]) {
-      setErrors({ ...errors, [name]: null });
-    }
-  };
+  const newValue = type === 'checkbox' ? checked : value;
+
+  setForm({ ...form, [name]: newValue });
+  setFormTouched({ ...formTouched, [name]: true });
+
+  if (errors[name]) {
+    setErrors({ ...errors, [name]: null });
+  }
+};
+
 
   const handleAddMaterial = () => {
     if (newMaterial.type && newMaterial.id) {
@@ -320,6 +366,20 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
                 />
                 {renderErrorMessage('phone')}
               </div>
+              <div>
+                <label htmlFor="is_active" className={labelClass}>
+                  Utilisateur actif
+                </label>
+                <input
+                  id="is_active"
+                  name="is_active"
+                  type="checkbox"
+                  checked={form.is_active}
+                  onChange={handleChange}
+                  className="w-4 h-4 mt-2 accent-blue-600"
+                />
+              </div>
+
             </div>
 
             {/* Column 2 */}
@@ -411,6 +471,8 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
                 </select>
                 {renderErrorMessage('service')}
               </div>
+
+
             </div>
             {/* Material Assignment Section */}
             <div className="col-span-2 border-t pt-4 mt-4">
@@ -460,6 +522,11 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
                     <option value="phone">Téléphone</option>
                     <option value="printer">Imprimante</option>
                     <option value="ecrant">Écran</option>
+                    <option value="logiciel">Logiciel</option>
+                    <option value="peripherique">Périphérique</option>
+                    <option value="routeur">Routeur</option>
+                    <option value="serveur">Serveur</option>
+                    <option value="stockageExterne">Stockage Externe</option>
                   </select>
                 </div>
                 <div>
@@ -497,6 +564,37 @@ const UserFormModal = ({ isOpen, onClose, onSubmit, onDelete, user, departments,
                           {ecrant.name} - {ecrant.marque || 'Non spécifié'}
                         </option>
                       ))}
+                    {newMaterial.type === 'logiciel' &&
+                      availableLogiciels.map(logiciel => (
+                        <option key={logiciel.id} value={logiciel.id}>
+                          {logiciel.name} - {logiciel.version || 'Non spécifié'}
+                        </option>
+                      ))}
+                    {newMaterial.type === 'peripherique' &&
+                      availablePeripheriques.map(peripherique => (
+                        <option key={peripherique.id} value={peripherique.id}>
+                          {peripherique.name} - {peripherique.marque || 'Non spécifié'} -{peripherique.type_peripherique || 'Non spécifié'}
+                        </option>
+                      ))}
+                    {newMaterial.type === 'routeur' &&
+                      availableRouteurs.map(routeur => (
+                        <option key={routeur.id} value={routeur.id}>
+                          {routeur.name} - {routeur.marque || 'Non spécifié'}   
+                        </option>
+                      ))}
+                    {newMaterial.type === 'serveur' &&
+                      availableServeurs.map(serveur => (
+                        <option key={serveur.id} value={serveur.id}>
+                          {serveur.name} - {serveur.marque || 'Non spécifié'}
+                        </option>
+                      ))}
+                    {newMaterial.type === 'stockageExterne' &&
+                      availableStockagesExterne.map(stockage => (
+                        <option key={stockage.id} value={stockage.id}>
+                          {stockage.name} - {stockage.marque || 'Non spécifié'}
+                        </option>
+                      ))}
+
                   </select>
                 </div>
                 <div className="flex items-end">

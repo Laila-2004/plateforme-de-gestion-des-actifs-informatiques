@@ -160,15 +160,6 @@ const Login = () => {
               </Form>
             )}
           </Formik>
-          
-          {/* Additional Links */}
-          <div className="mt-6 text-center">
-            <div className="text-sm text-gray-600">
-              <a href="#" className="font-medium text-blue-600 hover:text-blue-500 transition-colors duration-200">
-                Mot de passe oublié ?
-              </a>
-            </div>
-          </div>
         </div>
         
         {/* Footer */}

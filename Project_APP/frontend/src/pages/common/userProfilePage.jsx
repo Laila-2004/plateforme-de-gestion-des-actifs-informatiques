@@ -321,7 +321,7 @@ const UserProfile = () => {
               {userData.service_details.department_details && (
                 <div className="col-span-2 bg-gray-50 p-4 rounded-lg">
                   <h3 className="text-sm font-medium text-gray-500">Description du service</h3>
-                  <p className="mt-1">{userData.service.description}</p>
+                  <p className="mt-1">{userData.service_details.description}</p>
                 </div>
               )}
             </div>

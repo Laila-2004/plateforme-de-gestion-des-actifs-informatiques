@@ -293,3 +293,346 @@ RuntimeError: You called this URL via PATCH, but the URL doesn't end in a slash 
 2025-05-29 23:15:57,164 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\backend\urls.py changed, reloading.
 2025-05-29 23:57:53,519 - django.request - WARNING - Unauthorized: /api/notifications/
 2025-05-29 23:57:54,790 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-30 00:01:55,056 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\chat\views.py changed, reloading.
+2025-05-30 00:12:21,393 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:12:46,083 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:13:02,361 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:13:21,899 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:15:55,374 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:16:28,022 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:16:46,621 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:18:42,516 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:18:55,145 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:20:09,100 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:20:59,713 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:21:47,362 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 00:23:05,899 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-05-30 02:08:46,778 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-30 03:08:56,760 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-30 04:09:56,763 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-30 05:10:56,755 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-30 20:52:22,702 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-30 21:52:49,746 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-05-30 21:52:50,101 - django.request - WARNING - Unauthorized: /api/auth/token/refresh/
+2025-06-02 18:54:31,809 - django.request - WARNING - Not Found: /api/departements
+2025-06-02 18:54:32,284 - django.request - WARNING - Not Found: /favicon.ico
+2025-06-02 18:55:07,646 - django.request - WARNING - Not Found: /api/app_users/router.register(r'departments',DepartmentViewSet)
+2025-06-02 18:55:14,492 - django.request - WARNING - Not Found: /api/app_users/departements/
+2025-06-02 18:56:15,754 - django.request - WARNING - Not Found: /api/app_users/services/
+2025-06-02 18:56:52,077 - django.request - WARNING - Not Found: /api/departement/
+2025-06-02 18:56:56,175 - django.request - WARNING - Not Found: /api/departements/
+2025-06-02 18:57:25,001 - django.request - WARNING - Not Found: /api/departements/
+2025-06-02 22:33:07,514 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-02 22:46:20,273 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 22:47:02,765 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\urls.py changed, reloading.
+2025-06-02 22:56:35,945 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 22:56:52,135 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:56:55,735 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:56:56,560 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:56:56,723 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:56:56,955 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:56:58,737 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:57:15,447 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 22:58:13,854 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 22:58:21,757 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:58:23,001 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:58:24,656 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:58:24,839 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:58:25,037 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:58:25,258 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:58:25,452 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:58:25,650 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 22:58:48,899 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 22:59:34,471 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 22:59:48,439 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 23:00:18,918 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 23:00:29,112 - django.request - ERROR - Internal Server Error: /api/export-departements-services/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py", line 82, in export_departements_services_pdf
+    doc = SimpleDocTemplate(response, pagesize=A4, topMargin=0.5*inch, bottomMargin=0.5*inch)
+                                                                 ^^^^
+NameError: name 'inch' is not defined
+2025-06-02 23:01:31,140 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 23:05:43,676 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 23:07:58,180 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 23:08:52,027 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 23:09:12,191 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\App_Users\views.py changed, reloading.
+2025-06-02 23:23:11,849 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\views.py changed, reloading.
+2025-06-02 23:23:53,728 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-02 23:33:18,547 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-03 00:33:55,665 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-03 01:33:55,652 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-03 02:02:44,317 - django.request - ERROR - Internal Server Error: /api/export-materiels-groupes/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\views.py", line 145, in export_tous_materiels_pdf
+    response = HttpResponse(content_type='application/pdf')
+               ^^^^^^^^^^^^
+NameError: name 'HttpResponse' is not defined
+2025-06-03 02:03:30,462 - django.request - ERROR - Internal Server Error: /api/export-materiels-groupes/
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\views.py", line 145, in export_tous_materiels_pdf
+    response = HttpResponse(content_type='application/pdf')
+               ^^^^^^^^^^^^
+NameError: name 'HttpResponse' is not defined
+2025-06-03 02:05:36,262 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\views.py changed, reloading.
+2025-06-03 02:14:37,869 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\views.py changed, reloading.
+2025-06-03 02:28:08,301 - django.request - WARNING - Not Found: /api/export-ecrans/
+2025-06-03 02:33:59,719 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-04 21:37:16,869 - django.request - WARNING - Not Found: /api/transitions/${materielId}/
+2025-06-04 21:37:17,426 - django.request - WARNING - Not Found: /favicon.ico
+2025-06-04 21:42:38,376 - analytics_models - INFO - Ticket créé pour le matériel DESK1 - Mise à jour de la prédiction
+2025-06-04 21:42:38,476 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.56)
+2025-06-04 21:48:04,024 - analytics_models - INFO - Ticket créé pour le matériel DESK1 - Mise à jour de la prédiction
+2025-06-04 21:48:04,188 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.56)
+2025-06-04 21:54:20,065 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\signals.py changed, reloading.
+2025-06-04 21:55:40,243 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Tickets\signals.py changed, reloading.
+2025-06-04 21:57:43,499 - analytics_models - INFO - Ticket créé pour le matériel DESK1 - Mise à jour de la prédiction
+2025-06-04 21:57:43,628 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.56)
+2025-06-04 22:36:56,190 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-04 22:39:14,037 - analytics_models - INFO - Ticket créé pour le matériel DESK1 - Mise à jour de la prédiction
+2025-06-04 22:39:14,246 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.56)
+2025-06-04 22:39:45,374 - django.request - WARNING - Bad Request: /api/tickets/
+2025-06-04 22:40:52,371 - analytics_models - INFO - Ticket créé pour le matériel DESK1 - Mise à jour de la prédiction
+2025-06-04 22:40:52,518 - maintenance_prediction - INFO - Prédiction créée pour DESK1: materiel (probabilité: 0.62)
+2025-06-04 22:51:51,540 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\scheduled_tasks.py changed, reloading.
+2025-06-05 14:02:13,047 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-06 00:04:46,097 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-06 00:04:56,206 - django.request - WARNING - Unauthorized: /api/auth/token/refresh/
+2025-06-06 00:09:43,841 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-06-06 17:03:40,668 - django.request - WARNING - Not Found: /api/predict_panne/2/
+2025-06-06 17:03:43,143 - django.request - WARNING - Not Found: /api/predict_panne/2/
+2025-06-06 17:03:44,006 - django.request - WARNING - Not Found: /api/predict_panne/2/
+2025-06-06 17:03:44,223 - django.request - WARNING - Not Found: /api/predict_panne/2/
+2025-06-06 17:03:44,443 - django.request - WARNING - Not Found: /api/predict_panne/2/
+2025-06-06 17:03:44,684 - django.request - WARNING - Not Found: /api/predict_panne/2/
+2025-06-06 17:03:44,904 - django.request - WARNING - Not Found: /api/predict_panne/2/
+2025-06-06 17:03:45,510 - django.request - WARNING - Not Found: /api/predict_panne/2/
+2025-06-06 18:03:55,720 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-06 18:47:44,561 - django.request - WARNING - Not Found: /api/services/app_users/
+2025-06-06 18:47:45,274 - django.request - WARNING - Not Found: /favicon.ico
+2025-06-06 19:35:49,099 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-06 20:15:56,679 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-06 20:16:11,071 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-06 20:18:59,878 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-06 20:22:24,065 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-06 20:23:46,799 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-06 20:23:58,619 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-06 20:29:36,035 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-06-06 20:29:51,685 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-06-06 20:30:00,590 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-06-06 20:30:09,622 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-06-06 20:30:20,443 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\serializers.py changed, reloading.
+2025-06-06 20:33:15,840 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-06 22:36:32,355 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-06 22:36:32,359 - django.request - WARNING - Unauthorized: /api/predictions/high_risk_assets/
+2025-06-06 22:36:32,361 - django.request - WARNING - Unauthorized: /api/ordinateurs/
+2025-06-06 22:36:32,365 - django.request - WARNING - Unauthorized: /api/app_users/
+2025-06-06 22:36:32,363 - django.request - WARNING - Unauthorized: /api/predictions/
+2025-06-06 22:36:32,449 - django.request - WARNING - Unauthorized: /api/predictions/
+2025-06-06 22:36:32,464 - django.request - WARNING - Unauthorized: /api/app_users/
+2025-06-06 22:36:32,495 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-06 22:36:32,516 - django.request - WARNING - Unauthorized: /api/ordinateurs/
+2025-06-06 22:36:32,532 - django.request - WARNING - Unauthorized: /api/predictions/high_risk_assets/
+2025-06-06 22:36:32,556 - django.request - WARNING - Unauthorized: /api/app_users/
+2025-06-06 22:36:32,576 - django.request - WARNING - Unauthorized: /api/app_users/
+2025-06-06 23:01:31,806 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-06-06 23:01:47,462 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Analytics\views.py changed, reloading.
+2025-06-06 23:13:08,743 - django.request - WARNING - Not Found: /api/predictions/[object Object]/
+2025-06-07 02:24:59,905 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-07 02:25:42,130 - django.request - WARNING - Not Found: /api/predictions/[object Object]/
+2025-06-07 02:25:42,134 - django.request - WARNING - Not Found: /api/predictions/[object Object]/
+2025-06-07 02:35:38,660 - django.request - WARNING - Not Found: /api/predictions/[object Object]/
+2025-06-07 02:35:55,732 - django.request - WARNING - Not Found: /api/predictions/[object Object]/
+2025-06-07 03:25:46,524 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-07 20:28:37,714 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-07 20:28:39,014 - django.request - WARNING - Unauthorized: /api/auth/token/refresh/
+2025-06-07 20:43:10,021 - django.request - WARNING - Not Found: /api/api/predictions/high_risk_assets/
+2025-06-07 20:43:10,086 - django.request - WARNING - Not Found: /api/api/predictions/
+2025-06-07 20:43:10,183 - django.request - WARNING - Not Found: /api/api/predictions/high_risk_assets/
+2025-06-07 20:43:10,196 - django.request - WARNING - Not Found: /api/api/predictions/
+2025-06-07 21:11:36,062 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 21:12:01,231 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 21:12:18,543 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 21:14:53,690 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 21:15:33,109 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 21:15:46,341 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 21:15:58,659 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 21:29:19,829 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 21:30:49,593 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-07 21:32:37,204 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\urls.py changed, reloading.
+2025-06-07 22:17:09,243 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-07 22:30:56,725 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-07 23:19:16,662 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-07 23:19:49,322 - django.utils.autoreload - INFO - C:\Users\hp\Desktop\Project_PFA\Project_APP\backend\Materiels\models.py changed, reloading.
+2025-06-08 13:11:48,990 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-08 13:14:32,260 - django.request - WARNING - Bad Request: /api/serveurs/
+2025-06-08 13:14:39,170 - django.request - WARNING - Bad Request: /api/serveurs/
+2025-06-08 13:15:59,906 - django.request - WARNING - Bad Request: /api/serveurs/
+2025-06-08 13:23:21,482 - django.request - WARNING - Bad Request: /api/serveurs/
+2025-06-08 13:23:39,100 - django.request - WARNING - Bad Request: /api/serveurs/
+2025-06-08 13:28:56,417 - django.request - WARNING - Bad Request: /api/serveurs/
+2025-06-08 13:29:41,285 - django.request - WARNING - Bad Request: /api/serveurs/
+2025-06-08 13:31:17,499 - django.request - WARNING - Not Found: /favicon.ico
+2025-06-08 13:37:25,581 - django.request - WARNING - Bad Request: /api/serveurs/
+2025-06-08 14:11:50,280 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-08 14:11:50,350 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-08 14:11:50,358 - django.request - WARNING - Unauthorized: /api/ordinateurs/
+2025-06-08 14:11:50,361 - django.request - WARNING - Unauthorized: /api/impriments/
+2025-06-08 14:11:50,364 - django.request - WARNING - Unauthorized: /api/ecrants/
+2025-06-08 14:11:50,368 - django.request - WARNING - Unauthorized: /api/telephones/
+2025-06-08 14:11:50,404 - django.request - WARNING - Unauthorized: /api/ordinateurs/
+2025-06-08 14:11:50,428 - django.request - WARNING - Unauthorized: /api/impriments/
+2025-06-08 14:11:50,440 - django.request - WARNING - Unauthorized: /api/ecrants/
+2025-06-08 14:11:50,447 - django.request - WARNING - Unauthorized: /api/telephones/
+2025-06-08 14:11:50,455 - django.request - WARNING - Unauthorized: /api/ordinateurs/
+2025-06-08 14:11:50,467 - django.request - WARNING - Unauthorized: /api/ordinateurs/
+2025-06-09 00:57:33,441 - django.request - WARNING - Unauthorized: /api/notifications/
+2025-06-09 00:57:34,489 - django.request - WARNING - Unauthorized: /api/auth/token/refresh/
+2025-06-09 20:45:18,946 - django.request - WARNING - Unauthorized: /api/notifications/

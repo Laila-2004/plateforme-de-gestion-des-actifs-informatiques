@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Computer, Printer, Phone, Monitor, User, Calendar, Hash, Tag } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import { getAllComputers, getAllEcrants, getAllPhones, getAllPrinters } from '../../services/api/materielService';
+import { getAllComputers, getAllEcrants, getAllPhones, getAllPrinters,getAllLogiciels,getAllPeripheriques,getAllRouteurs,getAllServeurs,getAllStockagesExterne } from '../../services/api/materielService';
 
 // Wrapper functions pour récupérer les données
 const AllComputers = async () => {
@@ -48,6 +48,57 @@ const AllEcrants = async () => {
   }
 };
 
+const AllLogiciels = async () => {
+  try { 
+    const response = await getAllLogiciels();
+    console.log('Response getAllLogiciels:', response);
+    return response.data || response;
+  } catch (error) {
+    console.error('Erreur getAllLogiciels:', error);
+    return [];
+  }
+};
+const AllPeripheriques = async () => {  
+  try {
+    const response = await getAllPeripheriques();
+    console.log('Response getAllPeripheriques:', response);
+    return response.data || response;
+  } catch (error) {
+    console.error('Erreur getAllPeripheriques:', error);
+    return [];
+  }
+};
+const AllRouteurs = async () => {
+  try {
+    const response = await getAllRouteurs();
+    console.log('Response getAllRouteurs:', response);
+    return response.data || response;
+  } catch (error) {
+    console.error('Erreur getAllRouteurs:', error);
+    return [];
+  }
+};
+const AllServeurs = async () => {
+  try {
+    const response = await getAllServeurs();
+    console.log('Response getAllServeurs:', response);
+    return response.data || response;
+  } catch (error) {
+    console.error('Erreur getAllServeurs:', error);
+    return [];
+  }
+};
+const AllStockagesExterne = async () => {
+  try {
+    const response = await getAllStockagesExterne();
+    console.log('Response getAllStockagesExterne:', response);
+    return response.data || response;
+  } catch (error) {
+    console.error('Erreur getAllStockagesExterne:', error);
+    return [];
+  }
+};
+
 function Myassets() {
   const [assets, setAssets] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -60,7 +111,12 @@ function Myassets() {
     ordinateur: { icon: Computer, label: 'Ordinateurs', service: AllComputers },
     imprimante: { icon: Printer, label: 'Imprimantes', service: AllPrinters },
     telephone: { icon: Phone, label: 'Téléphones', service: AllPhones },
-    ecran: { icon: Monitor, label: 'Écrans', service: AllEcrants }
+    ecran: { icon: Monitor, label: 'Écrans', service: AllEcrants },
+    logiciel: { icon: Tag, label: 'Logiciels', service: AllLogiciels },
+    peripherique: { icon: Hash, label: 'Périphériques', service: AllPeripheriques },
+    routeur: { icon: Hash, label: 'Routeurs', service: AllRouteurs },
+    serveur: { icon: Hash, label: 'Serveurs', service: AllServeurs },
+    stockage_externe: { icon: Hash, label: 'Stockages Externes', service: AllStockagesExterne }
   };
 
   // Récupérer tous les équipements assignés à l'utilisateur
@@ -242,6 +298,96 @@ function Myassets() {
               <span className="ml-1">{asset.type_imprimante}</span>
             </div>
           )}
+          {asset.type === 'logiciel' && (
+            <>
+              {asset.version && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Hash className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Version:</span>
+                  <span className="ml-1">{asset.version}</span>
+                </div>
+              )}
+              {asset.license_key && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Tag className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Clé de licence:</span>
+                  <span className="ml-1">{asset.license_key}</span>
+                </div>
+              )}
+            </>
+          )}
+          {asset.type === 'peripherique' && (
+            <>
+              {asset.type_peripherique && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Hash className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Type:</span>
+                  <span className="ml-1">{asset.type_peripherique}</span>
+                </div>
+              )}
+              {asset.marque && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Tag className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Marque:</span>
+                  <span className="ml-1">{asset.marque}</span>
+                </div>
+              )}
+            </>
+          )}
+          {asset.type === 'routeur' && (
+            <>
+              {asset.ip_address && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Hash className="w-4 h-4 mr-2" />
+                  <span className="font-medium">IP:</span>
+                  <span className="ml-1">{asset.ip_address}</span>
+                </div>
+              )}
+              {asset.mac_address && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Hash className="w-4 h-4 mr-2" />
+                  <span className="font-medium">MAC:</span>
+                  <span className="ml-1">{asset.mac_address}</span>
+                </div>
+              )}
+            </>
+          )}
+          {asset.type === 'serveur' && (
+            <>
+              {asset.ip_address && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Hash className="w-4 h-4 mr-2" />
+                  <span className="font-medium">IP:</span>
+                  <span className="ml-1">{asset.ip_address}</span>
+                </div>
+              )}
+              {asset.mac_address && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Hash className="w-4 h-4 mr-2" />
+                  <span className="font-medium">MAC:</span>
+                  <span className="ml-1">{asset.mac_address}</span>
+                </div>
+              )}
+            </>
+          )}
+          {asset.type === 'stockage_externe' && (
+            <>
+              {asset.capacite && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Hash className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Capacité:</span>
+                  <span className="ml-1">{asset.capacite}</span>
+                </div>
+              )}
+              {asset.marque && (
+                <div className="flex items-center text-sm text-gray-600">
+                  <Tag className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Marque:</span>
+                  <span className="ml-1">{asset.marque}</span>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     );
@@ -263,7 +409,7 @@ function Myassets() {
         {/* Onglets de filtrage */}
         <div className="mb-6">
           <div className="border-b border-gray-200">
-            <nav className="-mb-px flex space-x-8">
+            <nav className="-mb-px flex space-x-8 overflow-x-auto " style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
               <button
                 onClick={() => setActiveTab('tous')}
                 className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${

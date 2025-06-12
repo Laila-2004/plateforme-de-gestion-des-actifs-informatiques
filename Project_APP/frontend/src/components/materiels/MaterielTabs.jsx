@@ -3,7 +3,8 @@ import MaterielTable from './MaterielTable';
 
 const MaterielTabs = () => {
   const [activeTab, setActiveTab] = useState('Ordinateurs');
-  const tabs = ['Ordinateurs', 'Écrans', 'Imprimantes', 'Téléphones'];
+  const tabs = ['Ordinateurs','Écrans','Imprimantes','Téléphones','Serveurs','Logiciels','Stockages externes','Routeurs','Périphériques'];
+
 
   return (
     <div className="bg-white rounded-lg shadow">

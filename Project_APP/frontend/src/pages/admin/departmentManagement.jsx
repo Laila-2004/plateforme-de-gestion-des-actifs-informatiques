@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { getAllDepartments, createDepartment, updateDepartment, deleteDepartment } from "../../services/api/departmentService";
 import { getAllServices, createService, updateService, deleteService } from "../../services/api/serviceService";
 import { getAllUsers } from "../../services/api/userService";
-import { Search, Plus,} from "lucide-react";
+import { Search, Plus, Download,} from "lucide-react";
 import DepartmentCard from '../../components/departments/DepartmentCard'
 import ServiceDetailModal from '../../components/departments/ServiceDetail'
+import instance from "../../services/api/axiosConfig";
 
 export default function DepartmentManagement() {
   const [departments, setDepartments] = useState([]);
@@ -159,6 +160,10 @@ export default function DepartmentManagement() {
     return matchesSearch && (activeTab === "favorites" ? d.isFavorite : true);
   });
 
+  const handleDownload = async () => {
+    window.open("http://localhost:8000/api/export-departements-services/", "_blank");
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
 
@@ -195,8 +200,6 @@ export default function DepartmentManagement() {
           </div>
           
           <div className="flex items-center space-x-2">
-            
-            
             <button 
               onClick={handleAddDepartment}
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -204,7 +207,12 @@ export default function DepartmentManagement() {
               <Plus size={16} className="mr-2" />
               Ajouter un département
             </button>
+            <button onClick={handleDownload} className="flex items-center justify-center p-3 bg-yellow-50 text-yellow-600 rounded-xl border border-yellow-200 hover:bg-yellow-100 transition-colors ">
+            <Download className="h-5 w-5 mr-2" />
+          <span className="text-sm font-medium">Exporter</span>
+        </button>
           </div>
+          
         </div>
 
         {/* Loading State */}

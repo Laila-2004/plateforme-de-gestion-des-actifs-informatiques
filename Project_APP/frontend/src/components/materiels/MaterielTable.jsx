@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {
-  getAllComputers,
-  getAllEcrants,
-  getAllPrinters,
-  getAllPhones,
-  deleteComputer,
-  deleteEcrant,
-  deletePrinter,
-  deletePhone
+  getAllComputers,getAllEcrants,getAllPrinters,getAllPhones,getAllServeurs,getAllLogiciels,  getAllStockagesExterne,getAllRouteurs,getAllPeripheriques,
+  deleteComputer,deleteEcrant,deletePrinter,deletePhone,deleteServeur,deleteLogiciel,deleteStockageExterne,deleteRouteur,deletePeripherique
 } from '../../services/api/materielService';
 import MaterielForm from './MaterielForm';
-import { Trash2, Edit2,} from "lucide-react";
+import { Trash2, Edit2, Printer,} from "lucide-react";
 
 const MaterielTable = ({ type }) => {
   const [data, setData] = useState([]);
@@ -33,6 +27,11 @@ const MaterielTable = ({ type }) => {
       case 'Écrans': return 'Ecrant';
       case 'Imprimantes': return 'Impriment';
       case 'Téléphones': return 'Telephone';
+      case 'Serveurs': return'Serveur';
+      case 'Logiciels':return 'Logiciel';
+      case 'Stockages externes':return 'StockageExterne';
+      case 'Routeurs': return 'Routeur';
+      case 'Périphériques':return 'Peripherique';
       default: return '';
     }
   };
@@ -54,6 +53,22 @@ const MaterielTable = ({ type }) => {
         case 'Téléphones':
           result = await getAllPhones();
           break;
+        case 'Serveurs':
+          result = await getAllServeurs();
+          break;
+        case 'Logiciels':
+          result = await getAllLogiciels();
+          break; 
+        case 'Stockages externes':
+          result = await getAllStockagesExterne();
+          break;
+        case 'Routeurs':
+          result = await getAllRouteurs();
+          break;
+        case 'Périphériques':
+          result = await getAllPeripheriques();
+          break;
+
       }
       setData(result || []);
       setFilteredData(result || []);
@@ -78,6 +93,21 @@ const MaterielTable = ({ type }) => {
           break;
         case 'Téléphones':
           await deletePhone(id);
+          break;
+        case 'Serveurs':
+          await deleteServeur(id);
+          break;
+        case 'Logiciels':
+          await deleteLogiciel(id);
+          break;
+        case 'Stockages externes':
+          await deleteStockageExterne(id);
+          break;
+        case 'Routeurs':
+          await deleteRouteur(id);
+          break;
+        case 'Périphériques':
+          await deletePeripherique(id);
           break;
       }
       // Refresh the data
@@ -224,7 +254,7 @@ const MaterielTable = ({ type }) => {
       { value: 'marque', label: 'Marque' },
       { value: 'etat', label: 'État' },
       { value: 'date_achat', label: 'Date d\'achat' },
-      { value: 'assigned_to', label: 'Assigné à' }
+      { value: 'assigned_to', label: 'Assigné à' },
     ];
     
     // Ajouter des options spécifiques selon le type
@@ -254,6 +284,49 @@ const MaterielTable = ({ type }) => {
           { value: 'telephone_type', label: 'Type de téléphone' }
         ];
         break;
+      case 'Serveurs':
+        additionalOptions = [
+          { value: 'processeur', label: 'Processeur' },
+          { value: 'ram', label: 'RAM' },
+          { value: 'stockage', label: 'Stockage' },
+          { value: 'systeme_exploitation', label: 'Système d\'exploitation' },
+          { value: 'role', label: 'Rôle' },
+          { value: 'ip_adresse', label: 'Adresse IP' }
+        ];
+        break;
+
+      case 'Logiciels':
+        additionalOptions = [
+          { value: 'version', label: 'Version' },
+          { value: 'cle_licence', label: 'Clé de licence' },
+          { value: 'date_expiration', label: 'Date d\'expiration' },
+          { value: 'systeme_compatible', label: 'Système compatible' }
+        ];
+        break;
+
+      case 'Stockages externes':
+        additionalOptions = [
+          { value: 'type_stockage', label: 'Type de stockage' },
+          { value: 'capacite', label: 'Capacité' }
+        ];
+        break;
+
+      case 'Routeurs':
+        additionalOptions = [
+          { value: 'ip_adresse', label: 'Adresse IP' },
+          { value: 'nb_ports', label: 'Nombre de ports' },
+          { value: 'vitesse', label: 'Vitesse' }
+        ];
+        break;
+
+      case 'Périphériques':
+        additionalOptions = [
+          { value: 'type_peripherique', label: 'Type de périphérique' },
+          { value: 'connectivite', label: 'Connectivité' },
+          { value: 'compatible_os', label: 'Système compatible' }
+        ];
+        break;
+      
     }
     
     return [...commonOptions, ...additionalOptions];
@@ -304,44 +377,133 @@ const MaterielTable = ({ type }) => {
 
   // Afficher les détails spécifiques selon le type
   const getTypeSpecificDetails = (item) => {
+  switch (type) {
+    case 'Ordinateurs':
+      return (
+        <>
+          <span className="text-xs text-gray-500 block">Système d'exploitation : {item.system_exp || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">RAM : {item.ram || 'N/A'}, ROM : {item.rom || 'N/A'}</span>
+        </>
+      );
+
+    case 'Écrans':
+      return (
+        <span className="text-xs text-gray-500 block">Taille : {item.taille || 'N/A'}</span>
+      );
+
+    case 'Imprimantes':
+      return (
+        <span className="text-xs text-gray-500 block">Type : {item.impriment_type || 'N/A'}</span>
+      );
+
+    case 'Téléphones':
+      return (
+        <>
+          <span className="text-xs text-gray-500 block">N° : {item.numero || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">
+            Type : {item.telephone_type === 'portable' ? 'Portable' : item.telephone_type === 'bureau' ? 'Bureau' : 'N/A'}
+          </span>
+        </>
+      );
+
+    case 'Serveurs':
+      return (
+        <>
+          <span className="text-xs text-gray-500 block">Processeur : {item.processeur || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">RAM : {item.ram || 'N/A'}, Stockage : {item.stockage || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Système d'exploitation : {item.systeme_exploitation || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Rôle : {item.role || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Adresse IP : {item.ip_adresse || 'N/A'}</span>
+        </>
+      );
+
+    case 'Logiciels':
+      return (
+        <>
+          <span className="text-xs text-gray-500 block">Version : {item.version || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Clé de licence : {item.cle_licence || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Expiration : {item.date_expiration || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Système compatible : {item.systeme_compatible || 'N/A'}</span>
+        </>
+      );
+
+    case 'Stockages externes':
+      return (
+        <>
+          <span className="text-xs text-gray-500 block">Type : {item.type_stockage || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Capacité : {item.capacite || 'N/A'}</span>
+        </>
+      );
+
+    case 'Routeurs':
+      return (
+        <>
+          <span className="text-xs text-gray-500 block">Adresse IP : {item.ip_adresse || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Nombre de ports : {item.nb_ports || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Vitesse : {item.vitesse || 'N/A'}</span>
+        </>
+      );
+
+    case 'Périphériques':
+      return (
+        <>
+          <span className="text-xs text-gray-500 block">Type : {item.type_peripherique || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">Connectivité : {item.connectivite || 'N/A'}</span>
+          <span className="text-xs text-gray-500 block">OS Compatible : {item.compatible_os || 'N/A'}</span>
+        </>
+      );
+
+    default:
+      return null;
+  }
+};
+
+  const handleDownload=async () => {
     switch (type) {
       case 'Ordinateurs':
-        return (
-          <>
-            <span className="text-xs text-gray-500 block">Système d'exploitation : {item.system_exp || 'N/A'}</span>
-            <span className="text-xs text-gray-500 block">RAM: {item.ram || 'N/A'}, ROM: {item.rom || 'N/A'}</span>
-          </>
-        );
+        window.open('http://localhost:8000/api/export-ordinateurs/', '_blank');
+        break;
       case 'Écrans':
-        return <span className="text-xs text-gray-500 block">Taille: {item.taille || 'N/A'}</span>;
+        window.open('http://localhost:8000/api/export-ecrants/', '_blank');
+        break;
       case 'Imprimantes':
-        return <span className="text-xs text-gray-500 block">Type: {item.impriment_type || 'N/A'}</span>;
+        window.open('http://localhost:8000/api/export-imprimantes/', '_blank');
+        break;
       case 'Téléphones':
-        return (
-          <>
-            <span className="text-xs text-gray-500 block">N°: {item.numero || 'N/A'}</span>
-            <span className="text-xs text-gray-500 block">
-              Type: {item.telephone_type === 'portable' ? 'Portable' : 'Bureau'}
-            </span>
-          </>
-        );
-      default:
-        return null;
+        window.open('http://localhost:8000/api/export-telephones/', '_blank');
+        break;
     }
-  };
+  }
 
   return (
     <div className="bg-white rounded-lg shadow">
       <div className="p-4">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold">{type}</h2>
-          <button
-            onClick={handleAdd}
-            className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 md:w-auto w-1/2"
-          >
-            Ajouter {type.slice(0, -1)}
-          </button>
-        </div>
+        
+       
+                <div className="flex justify-between items-center mb-4">
+                {/* Le nom du matériel reste à gauche */}
+                <h2 className="text-xl font-semibold">{type}</h2>
+
+                {/* Les deux boutons sont regroupés et alignés à droite */}
+                <div className="flex items-center space-x-2"> {/* Utilisation de space-x-2 pour espacer les boutons */}
+                    {/* Bouton d'impression */}
+                    <button
+                        onClick={handleDownload}
+                        className="px-4 py-2 bg-white text-black rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 w-10 "
+                    >
+                        <Printer className="inline mr-2" /> {/* L'icône de l'imprimante */}
+                    </button>
+
+                    {/* Bouton d'ajout */}
+                    <button
+                        onClick={handleAdd}
+                        className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 md:w-auto w-full" 
+                    >
+                        Ajouter {type.slice(0, -1)}
+                    </button>
+                </div>
+                </div>
+        
         
         {/* Barre de recherche et filtres améliorés */}
         <div className="mb-6 bg-gray-50 p-4 rounded-lg shadow-sm">
@@ -461,6 +623,7 @@ const MaterielTable = ({ type }) => {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">État</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Achat</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assigné à</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Département/Service</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Détails</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                 </tr>
@@ -486,6 +649,23 @@ const MaterielTable = ({ type }) => {
                         </span>
                       )}
                     </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      {item.assigned_to ? (
+                        <div className="text-sm text-gray-900">
+                          <div>
+                            <span className="font-semibold text-blue-600">Service:</span>{' '}
+                            {item.assigned_to_details.service_details.name}
+                          </div>
+                          <div>
+                            <span className="font-semibold text-green-600">Département:</span>{' '}
+                            {item.assigned_to_details.service_details.department_details.name}
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="text-sm text-gray-400 italic">Aucun service assigné</div>
+                      )}
+                    </td>
+
                     <td className="px-6 py-4 whitespace-nowrap">
                       {getTypeSpecificDetails(item)}
                     </td>

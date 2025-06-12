@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Download, Printer }  from 'lucide-react';
 import {
   getAllUsers,
   createUser,
@@ -10,7 +11,7 @@ import { getAllServices } from '../../services/api/serviceService';
 import UserTable from '../../components/users/userTable';
 import UserForm from '../../components/users/userForm';
 import UserDetails from '../../components/users/userDetails';
-import { getAllComputers, getAllPhones, getAllPrinters ,getAllEcrants,updateComputer,updateEcrant,updatePhone,updatePrinter} from '../../services/api/materielService';
+import { getAllComputers, getAllPhones, getAllPrinters ,getAllEcrants,getAllLogiciels,getAllPeripheriques,getAllRouteurs,getAllServeurs,getAllStockagesExterne,updateComputer,updateEcrant,updatePhone,updatePrinter,updateLogiciel,updatePeripherique,updateRouteur,updateServeur,updateStockageExterne} from '../../services/api/materielService';
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -23,6 +24,11 @@ const UserManagement = () => {
   const [computers,setComputers]=useState([]);
   const [phones,setPhones]=useState([]);
   const [printers,setPrinters]=useState([]);
+  const [logiciels,setLogiciels]=useState([]);
+  const [peripheriques,setPeripheriques]=useState([]);
+  const [routeurs,setRouteurs]=useState([]);
+  const [serveurs,setServeurs]=useState([]);
+  const [stockagesExterne,setStockagesExterne]=useState([]);
   const [ecrants,setEcrants]=useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
@@ -97,6 +103,50 @@ const UserManagement = () => {
     }
   };
   
+  const loadLogiciels = async () => {
+    try {
+      const logiciels = await getAllLogiciels();
+      setLogiciels(logiciels);
+    } catch (err) {
+      console.error('Échec du chargement des logiciels', err);
+    }
+  };  
+
+const loadPeripheriques = async () => {
+    try {
+      const peripheriques = await getAllPeripheriques(); 
+      setPeripheriques(peripheriques);  
+    } catch (err) {
+      console.error('Échec du chargement des périphériques', err);
+    }
+  };
+
+const loadRouteurs = async () => {
+    try {
+      const routeurs = await getAllRouteurs();
+      setRouteurs(routeurs);
+    } catch (err) {
+      console.error('Échec du chargement des routeurs', err);
+    }
+  };
+const loadServeurs = async () => {
+    try {
+      const serveurs = await getAllServeurs();  
+      setServeurs(serveurs);
+    } catch (err) {
+      console.error('Échec du chargement des serveurs', err);
+    }
+  };
+const loadStockagesExterne = async () => {
+    try {
+      const stockagesExterne = await getAllStockagesExterne();
+      setStockagesExterne(stockagesExterne);
+    } catch (err) {
+      console.error('Échec du chargement des stockages externes', err);
+    }
+  };
+
+
 
   useEffect(() => {
     loadUsers();
@@ -106,6 +156,11 @@ const UserManagement = () => {
     loadPrinters();
     loadPhones();
     loadEcrants();
+    loadLogiciels();
+    loadPeripheriques();
+    loadRouteurs();
+    loadServeurs();
+    loadStockagesExterne();
   }, []);
 
   useEffect(() => {
@@ -176,6 +231,12 @@ const UserManagement = () => {
           const currentPhones = phones.filter(p => p.assigned_to === selectedUser.id);
           const currentPrinters = printers.filter(pr => pr.assigned_to === selectedUser.id);
           const currentEcrants = ecrants.filter(e => e.assigned_to === selectedUser.id);
+          const currentLogiciels = logiciels.filter(l => l.assigned_to === selectedUser.id);
+          const currentPeripheriques = peripheriques.filter(p => p.assigned_to === selectedUser.id);
+          const currentRouteurs = routeurs.filter(r => r.assigned_to === selectedUser.id);
+          const currentServeurs = serveurs.filter(s => s.assigned_to === selectedUser.id);
+          const currentStockagesExterne = stockagesExterne.filter(s => s.assigned_to === selectedUser.id);
+
   
           // Pour chaque type de matériel, vérifier s'il a été retiré
           for (const computer of currentComputers) {
@@ -216,6 +277,47 @@ const UserManagement = () => {
               await updateEcrant(ecrant.id, { assigned_to: null });
             }
           }
+          for (const logiciel of currentLogiciels) {
+            const stillAssigned = form.assignedMaterials.some(
+              m => m.type === 'logiciel' && (m.id === logiciel.id || parseInt(m.id, 10) === logiciel.id)
+            );
+            if (!stillAssigned) {
+              await updateLogiciel(logiciel.id, { assigned_to: null });
+            }
+          }
+          for (const peripherique of currentPeripheriques) {
+            const stillAssigned = form.assignedMaterials.some(
+              m => m.type === 'peripherique' && (m.id === peripherique.id || parseInt(m.id, 10) === peripherique.id)
+            );
+            if (!stillAssigned) {
+              await updatePeripherique(peripherique.id, { assigned_to: null });
+            }
+          }
+          for (const routeur of currentRouteurs) {
+            const stillAssigned = form.assignedMaterials.some(
+              m => m.type === 'routeur' && (m.id === routeur.id || parseInt(m.id, 10) === routeur.id)
+            );
+            if (!stillAssigned) {
+              await updateRouteur(routeur.id, { assigned_to: null });
+            }
+          }
+          for (const serveur of currentServeurs) {
+            const stillAssigned = form.assignedMaterials.some(
+              m => m.type === 'serveur' && (m.id === serveur.id || parseInt(m.id, 10) === serveur.id)
+            );
+            if (!stillAssigned) {
+              await updateServeur(serveur.id, { assigned_to: null });
+            }
+          }
+          for (const stockageExterne of currentStockagesExterne) {
+            const stillAssigned = form.assignedMaterials.some(
+              m => m.type === 'stockage_externe' && (m.id === stockageExterne.id || parseInt(m.id, 10) === stockageExterne.id)
+            );
+            if (!stillAssigned) {
+              await updateStockageExterne(stockageExterne.id, { assigned_to: null });
+            }
+          }
+
         }
   
         // 2. Assigner les nouveaux matériels ou mettre à jour les existants
@@ -234,6 +336,21 @@ const UserManagement = () => {
               break;
             case 'ecrant':
               await updateEcrant(materialId, { assigned_to: createdUser.id });
+              break;
+            case 'logiciel':
+              await updateLogiciel(materialId, { assigned_to: createdUser.id });
+              break;
+            case 'peripherique':
+              await updatePeripherique(materialId, { assigned_to: createdUser.id });
+              break;
+            case 'routeur':
+              await updateRouteur(materialId, { assigned_to: createdUser.id });
+              break;
+            case 'serveur':
+              await updateServeur(materialId, { assigned_to: createdUser.id });
+              break;
+            case 'stockage_externe':
+              await updateStockageExterne(materialId, { assigned_to: createdUser.id });
               break;
             default:
               console.warn(`Type de matériel inconnu: ${material.type}`);
@@ -278,6 +395,11 @@ const UserManagement = () => {
     setSearch('');
   };
 
+const handleDownloadPDF = () => {
+  window.open("http://localhost:8000/api/export/users/", "_blank");
+};
+
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
@@ -303,6 +425,8 @@ const UserManagement = () => {
                 </svg>
                 <span>Nouvel Utilisateur</span>
               </button>
+
+
             </div>
           </div>
         </div>
@@ -388,7 +512,13 @@ const UserManagement = () => {
             <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-blue-500"></div>
           </div>
         )}
-
+        {/* imprimer */}
+        <div className="flex justify-end mb-4">
+              <button onClick={handleDownloadPDF} className="flex items-center justify-center p-3 bg-yellow-50 text-yellow-600 rounded-xl border border-yellow-200 hover:bg-yellow-100 transition-colors w-32">
+                <Download className="h-5 w-5 mr-2" />
+                <span className="text-sm font-medium">Exporter</span>
+            </button>
+        </div>
         {/* Table */}
         <div className="bg-white rounded-lg shadow overflow-hidden">
           <UserTable 
@@ -444,6 +574,11 @@ const UserManagement = () => {
         printers={printers}
         ecrants={ecrants}
         phones={phones}
+        logiciels={logiciels}
+        peripheriques={peripheriques}
+        routeurs={routeurs}
+        serveurs={serveurs}
+        stockagesExterne={stockagesExterne}
       />
       <UserDetails
         isOpen={modalOpenD}
@@ -459,6 +594,11 @@ const UserManagement = () => {
         computers={computers}
         printers={printers}
         ecrants={ecrants}
+        logiciels={logiciels}
+        peripheriques={peripheriques}
+        routeurs={routeurs}
+        serveurs={serveurs}
+        stockagesExterne={stockagesExterne}
       />
     </div>
   );

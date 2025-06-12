@@ -70,18 +70,12 @@ const AdminLayout = () => {
               {/* Desktop collapse button */}
               <button
                 onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-                className="hidden lg:flex p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200"
+                className="hidden lg:flex p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200 bg-emerald-600"
                 title={sidebarCollapsed ? "Développer le menu" : "Réduire le menu"}
               >
                 <Menu className={`w-5 h-5 transition-transform duration-300 ${sidebarCollapsed ? 'rotate-180' : ''}`} />
               </button>
-              {/* Mobile close button */}
-              <button
-                onClick={() => setSidebarOpen(false)}
-                className="lg:hidden p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200"
-              >
-                <X className="w-5 h-5" />
-              </button>
+            
             </div>
           </div>
         </div>

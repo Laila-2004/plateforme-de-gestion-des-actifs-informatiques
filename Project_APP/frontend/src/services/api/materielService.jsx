@@ -253,3 +253,292 @@ export const searchComputers = async (field, value) => {
         }
       };
       
+  const API_URL_SERVEURS = 'serveurs/';
+
+export const getAllServeurs = async () => {
+    try {
+        const response = await instance.get(API_URL_SERVEURS);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const getServeurById = async (id) => {
+    try {
+        const response = await instance.get(`${API_URL_SERVEURS}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const createServeur = async (data) => {
+    try {
+        const response = await instance.post(API_URL_SERVEURS, data);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const updateServeur = async (id, updatedData) => {
+    try {
+        const response = await instance.patch(`${API_URL_SERVEURS}${id}/`, updatedData);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const deleteServeur = async (id) => {
+    try {
+        const response = await instance.delete(`${API_URL_SERVEURS}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const searchServeurs = async (field, value) => {
+    try {
+        const response = await instance.get(`${API_URL_SERVEURS}search/`, {
+            params: { field, value }
+        });
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+const API_URL_LOGICIELS = 'logiciels/';
+
+export const getAllLogiciels = async () => {
+    try {
+        const response = await instance.get(API_URL_LOGICIELS);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const getLogicielById = async (id) => {
+    try {
+        const response = await instance.get(`${API_URL_LOGICIELS}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const createLogiciel = async (data) => {
+    try {
+        const response = await instance.post(API_URL_LOGICIELS, data);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const updateLogiciel = async (id, updatedData) => {
+    try {
+        const response = await instance.patch(`${API_URL_LOGICIELS}${id}/`, updatedData);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const deleteLogiciel = async (id) => {
+    try {
+        const response = await instance.delete(`${API_URL_LOGICIELS}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const searchLogiciels = async (field, value) => {
+    try {
+        const response = await instance.get(`${API_URL_LOGICIELS}search/`, {
+            params: { field, value }
+        });
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+const API_URL_STOCKAGES = 'stockages-externes/';
+
+export const getAllStockagesExterne = async () => {
+    try {
+        const response = await instance.get(API_URL_STOCKAGES);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const getStockageExterneById = async (id) => {
+    try {
+        const response = await instance.get(`${API_URL_STOCKAGES}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const createStockageExterne = async (data) => {
+    try {
+        const response = await instance.post(API_URL_STOCKAGES, data);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const updateStockageExterne = async (id, updatedData) => {
+    try {
+        const response = await instance.patch(`${API_URL_STOCKAGES}${id}/`, updatedData);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const deleteStockageExterne = async (id) => {
+    try {
+        const response = await instance.delete(`${API_URL_STOCKAGES}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const searchStockagesExterne = async (field, value) => {
+    try {
+        const response = await instance.get(`${API_URL_STOCKAGES}search/`, {
+            params: { field, value }
+        });
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+const API_URL_PERIPHERIQUES = 'peripheriques/';
+
+export const getAllPeripheriques = async () => {
+    try {
+        const response = await instance.get(API_URL_PERIPHERIQUES);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const getPeripheriqueById = async (id) => {
+    try {
+        const response = await instance.get(`${API_URL_PERIPHERIQUES}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const createPeripherique = async (data) => {
+    try {
+        const response = await instance.post(API_URL_PERIPHERIQUES, data);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const updatePeripherique = async (id, updatedData) => {
+    try {
+        const response = await instance.patch(`${API_URL_PERIPHERIQUES}${id}/`, updatedData);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const deletePeripherique = async (id) => {
+    try {
+        const response = await instance.delete(`${API_URL_PERIPHERIQUES}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const searchPeripheriques = async (field, value) => {
+    try {
+        const response = await instance.get(`${API_URL_PERIPHERIQUES}search/`, {
+            params: { field, value }
+        });
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+const API_URL_ROUTEURS = 'routeurs/';
+
+export const getAllRouteurs = async () => {
+    try {
+        const response = await instance.get(API_URL_ROUTEURS);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const getRouteurById = async (id) => {
+    try {
+        const response = await instance.get(`${API_URL_ROUTEURS}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const createRouteur = async (data) => {
+    try {
+        const response = await instance.post(API_URL_ROUTEURS, data);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const updateRouteur = async (id, updatedData) => {
+    try {
+        const response = await instance.patch(`${API_URL_ROUTEURS}${id}/`, updatedData);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const deleteRouteur = async (id) => {
+    try {
+        const response = await instance.delete(`${API_URL_ROUTEURS}${id}/`);
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};
+
+export const searchRouteurs = async (field, value) => {
+    try {
+        const response = await instance.get(`${API_URL_ROUTEURS}search/`, {
+            params: { field, value }
+        });
+        return response.data;
+    } catch (error) {
+        return handleApiError(error);
+    }
+};

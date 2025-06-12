@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import instance from '../../services/api/axiosConfig';
-import { AlertCircle, Calendar, AlertTriangle, Settings, Info, Plus } from 'lucide-react';
+import { AlertCircle, Calendar, AlertTriangle, X, Info, Plus } from 'lucide-react';
 import { createTicket } from '../../services/api/ticketService';
 import { useAuth } from '../../context/AuthContext';
 import { getAllComputers, getAllEcrants, getAllPhones, getAllPrinters } from '../../services/api/materielService';
@@ -194,6 +194,15 @@ function HighRiskAssetsDashboard() {
     }
   };
 
+  const handleDeletePrediction = async (id) => {
+  try {
+    const response = await instance.delete(`predictions/${id}/`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
@@ -228,10 +237,16 @@ function HighRiskAssetsDashboard() {
                       <span className="px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700 border border-red-300">
                         {probabilityPercentage}% de risque
                       </span>
+                      <button
+                          onClick={() => handleDeletePrediction(asset.id)}
+                          className="p-1 bg-gray-50 hover:bg-red-300 text-gray-400 hover:text-red-600 transition-colors w-5"
+                          title="Supprimer la prédiction"
+                        >
+                          <X className="h-4 w-4" />
+                        </button>
                     </div>
                     <h3 className="font-bold text-xl mt-2 text-gray-800">{asset.asset_name}</h3>
                   </div>
-                  
                   <div className="p-5">
                     <div className="flex items-start mb-4">
                       <div className="mr-3 mt-1">
