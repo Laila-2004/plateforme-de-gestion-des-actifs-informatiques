@@ -9,15 +9,14 @@ on:
       - dev
 
 jobs:
-
-  backend-test:
+  backend-tests:
     runs-on: ubuntu-latest
 
     services:
       mysql:
         image: mysql:8
         env:
-          MYSQL_ROOT_PASSWORD: ""  # mot de passe vide
+          MYSQL_ROOT_PASSWORD: ""
           MYSQL_DATABASE: parc_informatique
           MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
         ports:
@@ -37,15 +36,18 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install backend dependencies
+      - name: Install Python dependencies
+        working-directory: Project_APP/backend
         run: |
           python -m pip install --upgrade pip
-          pip install -r Project_APP/backend/requirements.txt
+          pip install -r requirements.txt
 
-      - name: Apply migrations
+      - name: Appliquer les migrations Django
+        working-directory: Project_APP/backend
         run: python manage.py migrate
 
-      - name: Run backend tests
+      - name: Lancer les tests Django
+        working-directory: Project_APP/backend
         env:
           MYSQL_HOST: 127.0.0.1
           MYSQL_PORT: 3306
@@ -54,11 +56,8 @@ jobs:
           MYSQL_PASSWORD: ""
         run: pytest
 
-
-  frontend-test:
+  frontend-tests:
     runs-on: ubuntu-latest
-
-    needs: backend-test   # attendre que backend-test soit fini
 
     steps:
       - name: Checkout code
@@ -70,9 +69,9 @@ jobs:
           node-version: '18'
 
       - name: Install frontend dependencies
-        working-directory: ./frontend   # adapte selon le chemin de ton React
+        working-directory: Project_APP/frontend
         run: npm install
 
-      - name: Run frontend tests
-        working-directory: ./frontend
-        run: npm test -- --watchAll=false
+      - name: Lancer les tests React
+        working-directory: Project_APP/frontend
+        run: npm run test
